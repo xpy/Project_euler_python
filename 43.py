@@ -1,8 +1,8 @@
 __author__ = 'xPy'
-from itertools import permutations
 import time
-
 start = time.clock()
+
+from itertools import permutations
 max = 9
 divisors = [2, 3, 5, 7, 11, 13, 17]
 results = []
