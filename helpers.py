@@ -36,3 +36,23 @@ def primesTo(to):
             numOfOdds += 1
         cur += 2
     return odds
+
+
+def isPermutation(str1,str2):
+    str1 = list(str(str1))
+    str2 = list(str(str2))
+    str1.sort()
+    str2.sort()
+    return  str1 == str2
+
+def pentagonal(n):
+    return (n*(3*n-1)/2)
+
+def isPentagonal(num):
+    # delta = 1 + 24 * num
+    # x1 = (1 + delta**.5) / 6
+    x = (1 + (1 + 24 * num)**.5) / 6
+    # if x == int(x):
+    #     print x , int(x),x == int(x)
+    return x == int(x)
+
