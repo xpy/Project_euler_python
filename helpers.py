@@ -2,7 +2,7 @@ def isPalindromic2(num):
     num = str(num)
     l = len(num) - 1
     for index, i in enumerate(num):
-        if (num[l - index] != i): return False
+        if num[l - index] != i: return False
     return True
 
 
