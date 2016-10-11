@@ -1,9 +1,9 @@
 import time
 import helpers
 import math
-inputFile = open('resources/', 'r')
+
+# inputFile = open('resources/', 'r')
 
 start = time.clock()
 
-
-print time.clock() - start
+print(time.clock() - start)
