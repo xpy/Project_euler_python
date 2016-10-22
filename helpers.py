@@ -10,31 +10,42 @@ def isPalindromic(num):
     return
 
 
+def shieve_primes_to(to):
+    prime_set = [True for i in range(0, to)]
+    i = 2
+    while i < to:
+        for j in range(i * 2, to, i):
+            prime_set[j] = False
+        i += 1
+        while i < len(prime_set) and not prime_set[i]:
+            i += 1
+
+    return [index for index, i in enumerate(prime_set) if i][2:]
+
+
+import math
+
+
 def primesTo(to):
     odds = [2]
-    cur = 3
     flag = True
-    numOfOdds = 0
     prek = 0
-    while cur < to:
+    for cur in range(3, to, 2):
         if flag:
             sqrtCur = cur ** .5
-            if sqrtCur == int(sqrtCur):
-                flag = False
-            for k in range(prek, numOfOdds):
-                if odds[k] >= sqrtCur:
-                    prek = k
-                    break
+            # if sqrtCur == int(sqrtCur):
+            #     flag = False
+            while odds[prek] < sqrtCur:
+                prek += 1
         else:
             flag = True
-        for i in range(0, prek):
-            if not cur % odds[i] or not flag:
-                flag = False
-                break
         if flag:
-            odds.append(cur)
-            numOfOdds += 1
-        cur += 2
+            for i in range(0, prek + 1):
+                if not cur % odds[i]:
+                    flag = False
+                    break
+            else:
+                odds.append(cur)
     return odds
 
 
@@ -107,3 +118,13 @@ def phi(num):
                 phiCache.append(i)
     return phiNum + 1
     # return len([i for i in range(2,num) if areRelativePrime(num , i)])+1
+
+
+_check_point_ = 0
+
+
+def check_point(num):
+    global _check_point_
+    if _check_point_ % num == 0:
+        print(_check_point_)
+    _check_point_ += 1

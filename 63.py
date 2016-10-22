@@ -3,20 +3,21 @@ import helpers
 
 start = time.clock()
 
-power=1
+power = 1
 index = 1
-num = index**power
+num = index ** power
 nums = []
-while len(str(num))==power :
-    while len(str(num))==power :
-        print len(str(num)),num, power
+while len(str(num)) == power:
+    while len(str(num)) == power:
+        print
+        len(str(num)), num, power
         nums.append(num)
-        power+=1
-        num = index**power
-    index+=1
+        power += 1
+        num = index ** power
+    index += 1
     power = 1
-    num = index**power
+    num = index ** power
 
-print len(nums)
-print '-' * 20
-print time.clock() - start
+print(len(nums))
+print('-' * 20)
+print(time.clock() - start)
