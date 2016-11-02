@@ -86,7 +86,7 @@ def isPentagonal(num):
     #     print x , int(x),x == int(x)
     return x == int(x)
 
-    primes = []
+primes = []
 
 
 def roots_2(a, b, c):
