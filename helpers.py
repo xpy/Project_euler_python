@@ -23,9 +23,6 @@ def shieve_primes_to(to):
     return [index for index, i in enumerate(prime_set) if i][2:]
 
 
-import math
-
-
 def primesTo(to):
     odds = [2]
     flag = True
@@ -57,8 +54,28 @@ def isPermutation(str1, str2):
     return str1 == str2
 
 
+def triangle(n):
+    return int(n * (n + 1) / 2)
+
+
+def square(n):
+    return int(n ** 2)
+
+
 def pentagonal(n):
-    return n * (3 * n - 1) / 2
+    return int(n * (3 * n - 1) / 2)
+
+
+def hexagonal(n):
+    return int(n * (2 * n - 1))
+
+
+def heptagonal(n):
+    return int(n * (5 * n - 3) / 2)
+
+
+def octagonal(n):
+    return int(n * (3 * n - 2))
 
 
 def isPentagonal(num):
@@ -69,8 +86,11 @@ def isPentagonal(num):
     #     print x , int(x),x == int(x)
     return x == int(x)
 
+    primes = []
 
-primes = []
+
+def roots_2(a, b, c):
+    return abs(-b + (b ** 2 - 4 * a * c) ** .5) / (2 * a)
 
 
 def isPrime(num):

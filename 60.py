@@ -27,7 +27,7 @@ print(time.clock() - start)
 def check(sub_list, target_length):
     # print(sub_list)
     if target_length == 0:
-        return sub_list[0]
+        return [sub_list[0]]
     if len(sub_list) < target_length:
         return False
     for j in range(1, len(sub_list)):
