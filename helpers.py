@@ -86,6 +86,7 @@ def isPentagonal(num):
     #     print x , int(x),x == int(x)
     return x == int(x)
 
+
 primes = []
 
 
@@ -138,6 +139,12 @@ def phi(num):
                 phiCache.append(i)
     return phiNum + 1
     # return len([i for i in range(2,num) if areRelativePrime(num , i)])+1
+
+
+def is_bouncy(num):
+    num2 = list(str(num))
+    ordered_num = sorted(num2)
+    return not (num2 == ordered_num or num2 == ordered_num[::-1])
 
 
 _check_point_ = 0
