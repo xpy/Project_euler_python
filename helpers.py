@@ -1,12 +1,13 @@
-def isPalindromic2(num):
+def is_palindromic2(num):
     num = str(num)
     l = len(num) - 1
     for index, i in enumerate(num):
-        if num[l - index] != i: return False
+        if num[l - index] != i:
+            return False
     return True
 
 
-def isPalindromic(num):
+def is_palindromic(num):
     return
 
 
@@ -23,16 +24,16 @@ def shieve_primes_to(to):
     return [index for index, i in enumerate(prime_set) if i][2:]
 
 
-def primesTo(to):
+def primes_to(to):
     odds = [2]
     flag = True
     prek = 0
     for cur in range(3, to, 2):
         if flag:
-            sqrtCur = cur ** .5
-            # if sqrtCur == int(sqrtCur):
+            sqrt_cur = cur ** .5
+            # if sqrt_cur == int(sqrt_cur):
             #     flag = False
-            while odds[prek] < sqrtCur:
+            while odds[prek] < sqrt_cur:
                 prek += 1
         else:
             flag = True
@@ -46,7 +47,7 @@ def primesTo(to):
     return odds
 
 
-def isPermutation(str1, str2):
+def is_permutation(str1, str2):
     str1 = list(str(str1))
     str2 = list(str(str2))
     str1.sort()
@@ -78,7 +79,7 @@ def octagonal(n):
     return int(n * (3 * n - 2))
 
 
-def isPentagonal(num):
+def is_pentagonal(num):
     # delta = 1 + 24 * num
     # x1 = (1 + delta**.5) / 6
     x = (1 + (1 + 24 * num) ** .5) / 6
@@ -94,17 +95,17 @@ def roots_2(a, b, c):
     return abs(-b + (b ** 2 - 4 * a * c) ** .5) / (2 * a)
 
 
-def isPrime(num):
+def is_prime(num):
     global primes
     if num in primes:
         return True
     if num == 2:
         return True
     sqrt = num ** .5
-    intSqrt = int(sqrt)
-    if sqrt == intSqrt:
+    int_sqrt = int(sqrt)
+    if sqrt == int_sqrt:
         return False
-    for i in range(3, intSqrt + 1, 2):
+    for i in range(3, int_sqrt + 1, 2):
         if num % i == 0:
             return False
     if not (num % 2 == 0):
@@ -112,32 +113,32 @@ def isPrime(num):
         return True
 
 
-def areRelativePrime(a, b):
-    minNum = min(a, b)
-    maxNum = max(a, b)
-    while minNum > 1:
-        tmp = minNum
-        minNum = maxNum % minNum
-        maxNum = tmp
-    return minNum == 1
+def are_relative_prime(a, b):
+    min_num = min(a, b)
+    max_num = max(a, b)
+    while min_num > 1:
+        tmp = min_num
+        min_num = max_num % min_num
+        max_num = tmp
+    return min_num == 1
 
 
 def phi(num):
     # print [i for i in range(2,num) if areRelativePrime(num , i)]
     # if (isPrime(num)):
     #     return num - 1
-    phiNum = 0
-    phiCache = []
+    phi_num = 0
+    phi_cache = []
     for i in range(2, num):
-        for j in phiCache:
+        for j in phi_cache:
             if i % j == 0:
                 break
         else:
-            if areRelativePrime(num, i):
-                phiNum += 1
+            if are_relative_prime(num, i):
+                phi_num += 1
             else:
-                phiCache.append(i)
-    return phiNum + 1
+                phi_cache.append(i)
+    return phi_num + 1
     # return len([i for i in range(2,num) if areRelativePrime(num , i)])+1
 
 

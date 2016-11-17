@@ -9,8 +9,7 @@ num = index ** power
 nums = []
 while len(str(num)) == power:
     while len(str(num)) == power:
-        print
-        len(str(num)), num, power
+        print(len(str(num)), num, power)
         nums.append(num)
         power += 1
         num = index ** power

@@ -2,20 +2,21 @@ import time
 import helpers
 
 start = time.clock()
-lychrels =[]
+lychrels = []
 
 for num in range(10000):
-    k=50
+    k = 50
     flag = True
-    next = num
-    while(k>0):
-        next = next+int(str(next)[::-1])
-        strNext = str(next)
-        if(strNext == strNext[::-1]):break
-        k-=1
+    next_num = num
+    while k > 0:
+        next_num += int(str(next_num)[::-1])
+        strNext = str(next_num)
+        if strNext == strNext[::-1]:
+            break
+        k -= 1
     else:
         lychrels.append(num)
 
 print(len(lychrels))
-print '-' * 20
-print time.clock() - start
+print('-' * 20)
+print(time.clock() - start)

@@ -9,7 +9,7 @@ k = 0
 power = 7830457
 digits = 10
 
-while len(num) <digits:
+while len(num) < digits:
     k += 1
     num = str(2 ** k)
 else:
@@ -47,12 +47,11 @@ for j in range(1,power+1):
 else:
 '''
 
-
-mask = 10**digits
+mask = 10 ** digits
 lastDigits = int(startNum)
-for k in range(0,(power-int(numPower))%power):
-    lastDigits = (lastDigits+lastDigits)%mask
-print (int(lastDigits)*28433 + 1)%mask
+for k in range(0, (power - int(numPower)) % power):
+    lastDigits = (lastDigits + lastDigits) % mask
+print(int(lastDigits) * 28433 + 1 % mask)
 
 # 10
 # 9700303872
@@ -62,15 +61,14 @@ print (int(lastDigits)*28433 + 1)%mask
 # 39700303872
 # 1128798739992577
 
-#12
+# 12
 # 839700303872
 # 23875198739992577
 
-#8639992577
+# 8639992577
 
 
-print '+' * 20
+print('+' * 20)
 
-
-print '-' * 20
-print time.clock() - start
+print('-' * 20)
+print(time.clock() - start)

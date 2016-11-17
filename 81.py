@@ -12,36 +12,36 @@ for line in matrixFile.readlines():
 route = []
 
 
-def calcRoute(route):
+def calc_route(route):
     global numSum, routeSum, combinations
     numSum = 0
     for i in route:
         numSum += matrix[i['i']][i['j']]
         # print numSum
     combinations += 1
-    if (combinations % 10000 == 0):
-        print combinations
+    if combinations % 10000 == 0:
+        print(combinations)
     routeSum = min(numSum, routeSum)
 
 
-def buildRoutes(i, j, route, sqSide):
+def build_routes(i, j, route, sq_side):
     global numSum, combinations, routeSum
     # route.append(tmpSquare)
-    squareValue = matrix[i][j]
-    numSum += squareValue
-    if i == sqSide - 1 and j == sqSide - 1:
+    square_value = matrix[i][j]
+    numSum += square_value
+    if i == sq_side - 1 and j == sq_side - 1:
         routeSum = min(numSum, routeSum)
         combinations += 1
-        print combinations,numSum
+        print(combinations, numSum)
         if routeSum == numSum:
-            print 'FOUND', routeSum
-    if i + 1 < sqSide and numSum+ matrix[i+1][j] < routeSum:
-        buildRoutes(i + 1, j, route, sqSide)
+            print('FOUND', routeSum)
+    if i + 1 < sq_side and numSum + matrix[i + 1][j] < routeSum:
+        build_routes(i + 1, j, route, sq_side)
         # route.pop()
-    if j + 1 < sqSide and numSum+ matrix[i][j+1] < routeSum:
-        buildRoutes(i, j + 1, route, sqSide)
+    if j + 1 < sq_side and numSum + matrix[i][j + 1] < routeSum:
+        build_routes(i, j + 1, route, sq_side)
         # route.pop()
-    numSum -= squareValue
+    numSum -= square_value
 
 
 # route = []
@@ -56,11 +56,11 @@ def buildRoutes(i, j, route, sqSide):
 #     i+=1
 #     if i==80 and j == 80:
 #         routeSum = max(sum(route),routeSum)
-buildRoutes(0, 0, route, 80)
+build_routes(0, 0, route, 80)
 
-print '+' * 20
-print routeSum
-#print sum(route)
+print('+' * 20)
+print(routeSum)
+# print sum(route)
 
-print '-' * 20
-print time.clock() - start
+print('-' * 20)
+print(time.clock() - start)

@@ -13,7 +13,7 @@ def make_thing(prime, num):
     target = 8
     for i in range(0, 10):
         # print(prime.replace(num, str(i)))
-        sumz += 1 if (not (prime[0] == num and i == 0)) and helpers.isPrime(int(prime.replace(num, str(i)))) else 0
+        sumz += 1 if (not (prime[0] == num and i == 0)) and helpers.is_prime(int(prime.replace(num, str(i)))) else 0
         if (sumz + 10 - i) < target:
             return False
         # print(sumz)
@@ -36,7 +36,7 @@ def asdf(prime):
 # print(make_thing("121313", "1"))
 
 cnt = 0
-primes = helpers.primesTo(150000)
+primes = helpers.primes_to(150000)
 for aprime in primes:
     if asdf(aprime):
         print("---------------" + str(aprime))
