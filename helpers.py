@@ -85,7 +85,7 @@ def is_pentagonal(num):
     x = (1 + (1 + 24 * num) ** .5) / 6
     # if x == int(x):
     #     print x , int(x),x == int(x)
-    return x == int(x)
+    return x.is_integer()
 
 
 primes = []
