@@ -156,3 +156,37 @@ def check_point(num):
     if _check_point_ % num == 0:
         print(_check_point_)
     _check_point_ += 1
+
+
+def fraction(num):
+    truples = set()
+    sequence = []
+
+    def fraction_internal(num, a=None, m=0, d=1):
+        a = a if a else int(num ** .5)
+        truple = (a, m, d)
+        next_m = d * a - m
+        next_d = int((num - next_m ** 2) / d)
+        next_a = int((int(num ** .5) + next_m) / next_d)
+        if truple in truples:
+            return sequence
+        truples.add(truple)
+        sequence.append(a)
+        return fraction_internal(num, next_a, next_m, next_d)
+
+    return fraction_internal(num)
+
+
+def convergents(num):
+    fraction_seq = fraction(num)
+    convergent_list = []
+    convergent_list.append((fraction_seq[0], 1))
+    convergent_list.append((fraction_seq[1] * convergent_list[-1][0] + 1, fraction_seq[1]))
+    for i in fraction_seq[2:]:
+        a = (i * convergent_list[-1][0] + convergent_list[-2][0], i * convergent_list[-1][1] + convergent_list[-2][1])
+        convergent_list.append(a)
+
+    for i in fraction_seq[1:]:
+        a = (i * convergent_list[-1][0] + convergent_list[-2][0], i * convergent_list[-1][1] + convergent_list[-2][1])
+        convergent_list.append(a)
+    return convergent_list
