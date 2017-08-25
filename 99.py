@@ -5,7 +5,7 @@ import math
 start = time.clock()
 
 print(max([(nums[1] * math.log10(nums[0]), i + 1) for i, nums in
-           enumerate([map(int, line.split(',')) for line in open('resources/base_exp.txt').readlines()])]))
+           enumerate([list(map(int, line.split(','))) for line in open('resources/base_exp.txt').readlines()])]))
 '''
 maxNum = 0
 maxIndex = 0
