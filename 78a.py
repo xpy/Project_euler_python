@@ -3,53 +3,29 @@ import helpers
 import math
 
 # inputFile = open('resources/', 'r')
-
 start = time.clock()
 
-summa = 0
-top = 5
-done = {}
+p = [1]
 
+n = 1
+while True:
+    i = 0
+    penta = 1
+    p.append(0)
 
-def asdf(top):
-    global summa
-    for i in range(top, 1, -1):
-        a = top // i
-        done[top] = True
-        summa += 1
-        print('a', top, a)
-        print('summa', summa)
-        if top - a > 1 and not done.get(top - a, False):
-            asdf(top - a)
+    while penta <= n:
+        sign = -1 if i % 4 > 1 else 1
+        p[n] += sign * p[n - int(penta)]
+        if(n%1000 == 0):
+            print(n,p[n])
+        p[n] %= 1000000
+        i += 1
 
+        j = int(i / 2 + 1 if (i % 2 == 0) else -(i / 2 + 1))
+        penta = int(j * (3 * j - 1) // 2)
 
-# asdf(top)
-print(math.factorial(5 + 2 - 1) / (math.factorial(5) * math.factorial(2 - 1)))
-import itertools
-
-count = 0
-aaaaa = set()
-ss_collection = []
-for i in itertools.product(['0', 'X'], repeat=10):
-    count += 1
-    if i not in aaaaa and tuple(reversed(i)) not in aaaaa:
-        s0 = 0
-        ss = {}
-        for j in i:
-            if j == '0':
-                s0 += 1
-            elif s0 > 0:
-                ss[s0] = ss.get(s0, 0) + 1
-                s0 = 0
-        if s0 > 0:
-            ss[s0] = ss.get(s0, 0) + 1
-        if ss not in ss_collection:
-            ss_collection.append(ss)
-            # print(i, ss)
-            aaaaa.add(i)
-            # print(count, i)
-print((count - 2) / 2)
-for i in sorted(aaaaa):
-    print(i)
-print(len(aaaaa))
+    if p[n] == 0:
+        break
+    n += 1
+print(p)
 print(time.clock() - start)

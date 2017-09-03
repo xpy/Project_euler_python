@@ -67,6 +67,22 @@ def pentagonal(n):
     return int(n * (3 * n - 1) / 2)
 
 
+def generalized_pentagonal2(n):
+    # n += 1
+    sign = -1 if n % 2 else 1
+    n = n // 2 * sign
+    return int(n * (3 * n - 1) / 2)
+
+PENDS = {}
+def generalized_pentagonal(n, sign):
+    # n += 1
+    n = n * sign
+    if PENDS.get(n, None) is not None:
+        return PENDS.get(n)
+    PENDS[n] = int(n * (3 * n - 1) / 2)
+    return PENDS[n]
+
+
 def hexagonal(n):
     return int(n * (2 * n - 1))
 
@@ -125,7 +141,7 @@ def are_relative_prime(a, b):
 
 def phi(num):
     # print [i for i in range(2,num) if areRelativePrime(num , i)]
-    # if (isPrime(num)):
+    # if (isPrime(num
     #     return num - 1
     phi_num = 0
     phi_cache = []
