@@ -9,7 +9,7 @@ start_time = time.clock()
 results = set()
 i = 10
 maxa = 0
-while i < 10 ** 9:
+while i < 10 ** 6:
     if i % 1000000 == 0:
         print(i)
     if i % 10:
