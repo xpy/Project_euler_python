@@ -6,6 +6,6 @@ import math
 
 start_time = time.clock()
 
-# CODE GOES HERE SILLY!!
-
+s = sum(helpers.shieve_primes_to(2 * (10 ** 6)))
+print("\033[0;35ms", s, "\033[0m")
 print(time.clock() - start_time)

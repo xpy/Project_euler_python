@@ -6,6 +6,5 @@ import math
 
 start_time = time.clock()
 
-# CODE GOES HERE SILLY!!
-
+print(helpers.shieve_primes_to(1000000)[10000])
 print(time.clock() - start_time)
