@@ -73,7 +73,10 @@ def generalized_pentagonal2(n):
     n = n // 2 * sign
     return int(n * (3 * n - 1) / 2)
 
+
 PENDS = {}
+
+
 def generalized_pentagonal(n, sign):
     # n += 1
     n = n * sign
@@ -126,6 +129,41 @@ def is_prime(num):
             return False
     if not (num % 2 == 0):
         primes.append(num)
+        return True
+
+
+class Primes:
+    primes = []
+    prime_set = set()
+
+    def __init__(self, to) -> None:
+        self.to = to
+        self.current = 1
+        super().__init__()
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current > self.to:
+            raise StopIteration
+        else:
+            self.current += 1
+            while not is_prime(self.current):
+                self.current += 1
+                if self.current > self.to:
+                    raise StopIteration
+
+            self.primes.append(self.current)
+            self.prime_set.add(self.current)
+            return self.current
+
+    def _is_prime(self, num):
+        for p in self.primes:
+            if num % p == 0:
+                return False
+            if p ** 2 > num:
+                return True
         return True
 
 

@@ -34,7 +34,7 @@ while True:
     result = 1
     for divisor in divisors:
         result *= divisors[divisor] + 1
-    if result > 600:
+    if result > 500:
         print(num)
         break
 
