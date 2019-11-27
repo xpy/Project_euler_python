@@ -244,3 +244,15 @@ def convergents(num):
         a = (i * convergent_list[-1][0] + convergent_list[-2][0], i * convergent_list[-1][1] + convergent_list[-2][1])
         convergent_list.append(a)
     return convergent_list
+
+
+def get_divisors(num, start=2, step=1):
+    i = start
+    res = [1, num]
+    limit = num // start
+    while i <= limit:
+        if num % i == 0:
+            limit = num // i
+            res += [i, limit]
+        i += step
+    return sorted(set(res))
