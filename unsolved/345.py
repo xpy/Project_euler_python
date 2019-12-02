@@ -23,7 +23,7 @@ nums = [
     [815, 559, 813, 459, 522, 788, 168, 586, 966, 232, 308, 833, 251, 631, 107],
     [813, 883, 451, 509, 615, 77, 281, 613, 459, 205, 380, 274, 302, 35, 805]]
 
-nums = [
+nums2 = [
     [7, 53, 183, 439, 863],
     [497, 383, 563, 79, 973],
     [287, 63, 343, 169, 583],
@@ -31,17 +31,56 @@ nums = [
     [767, 473, 103, 699, 303]
 ]
 nums_len = len(nums)
-maxs = 0
-for per in itertools.permutations(range(0, nums_len), nums_len):
-    s = 0
-    i = 0
-    for j in per:
-        s += nums[i][j]
-        i += 1
-    maxs = max(s, maxs)
+
+for i in range(0, nums_len):
+    for j in range(0, nums_len):
+        nums[i][j] = 1000 - nums[i][j]
+
+
+def the_perm_way():
+    maxs = 50000
+    found = False
+    perm = 0
+    for per in itertools.permutations(range(0, nums_len), nums_len):
+        s = 0
+        i = 0
+        perm += 1
+        found = True
+        for j in per:
+            s += nums[i][j]
+            if s > maxs:
+                found = False
+                break
+            i += 1
+        if found:
+            maxs = min(s, maxs)
+            print(maxs, i, perm)
     # print("\033[0;35ms", s, "\033[0m")
 
-print("\033[0;35mmaxs", maxs, "\033[0m")
+    print("\033[0;35mmaxs", maxs, "\033[0m")
+
+
+def the_other_way():
+    maxs = 50000
+    found = False
+    perm = 0
+    for i in range(0, nums_len):
+        js = []
+        s = 0
+        perm += 1
+        found = True
+        for j in [j for j in range(0, nums_len) if j not in js]:
+            s += nums[i][j]
+            js.append(j)
+            if s > maxs:
+                found = False
+                break
+            i += 1
+        if found:
+            maxs = min(s, maxs)
+            print(maxs, i, perm)
+
+
 print("\033[0;35mlen(nums)", len(nums), "\033[0m")
 print("\033[0;35mlen(nums)", len(nums[0]), "\033[0m")
 print(time.clock() - start_time)

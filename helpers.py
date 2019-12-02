@@ -256,3 +256,5 @@ def get_divisors(num, start=2, step=1):
             res += [i, limit]
         i += step
     return sorted(set(res))
+
+
