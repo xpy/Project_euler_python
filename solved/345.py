@@ -31,10 +31,10 @@ nums2 = [
     [767, 473, 103, 699, 303]
 ]
 nums_len = len(nums)
-
+offset = 993
 for i in range(0, nums_len):
     for j in range(0, nums_len):
-        nums[i][j] = 1000 - nums[i][j]
+        nums[i][j] = offset - nums[i][j]
 
 
 def the_perm_way():
@@ -55,32 +55,28 @@ def the_perm_way():
         if found:
             maxs = min(s, maxs)
             print(maxs, i, perm)
-    # print("\033[0;35ms", s, "\033[0m")
 
     print("\033[0;35mmaxs", maxs, "\033[0m")
 
 
-def the_other_way():
-    maxs = 50000
-    found = False
-    perm = 0
-    for i in range(0, nums_len):
-        js = []
-        s = 0
-        perm += 1
-        found = True
-        for j in [j for j in range(0, nums_len) if j not in js]:
-            s += nums[i][j]
-            js.append(j)
-            if s > maxs:
-                found = False
-                break
-            i += 1
-        if found:
-            maxs = min(s, maxs)
-            print(maxs, i, perm)
+maxs = 500000
 
 
-print("\033[0;35mlen(nums)", len(nums), "\033[0m")
-print("\033[0;35mlen(nums)", len(nums[0]), "\033[0m")
+def the_other_way(i, s, js):
+    global maxs
+    if s > maxs:
+        return
+    for j in [_ for _ in range(0, nums_len) if _ not in js]:
+        js.append(j)
+        if i < nums_len - 1:
+            the_other_way(i + 1, s + nums[i][j], js)
+        else:
+            if s + nums[i][j] < maxs:
+                maxs = min(s + nums[i][j], maxs)
+                print(maxs, nums_len * offset - maxs, i, js)
+        js.remove(j)
+
+
+the_other_way(0, 0, [])
+
 print(time.clock() - start_time)
