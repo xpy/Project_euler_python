@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 coins = [1, 2, 5, 10, 20, 50, 100, 200]
 target = 200
 
@@ -16,4 +16,4 @@ print(math.factorial(5 + 10 - 1)/(math.factorial(10 - 1) * math.factorial(5)))
 print(math.factorial(2 + 10 - 1)/(math.factorial(10 - 1) * math.factorial(5)))
 
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

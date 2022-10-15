@@ -4,7 +4,7 @@ import helpers
 # 8581146 255
 # 145
 # 56
-start = time.clock()
+start = time.perf_counter()
 numsThat = {1: {1}, 89: {89}}
 squares = {}
 for i in range(0, 10):
@@ -39,4 +39,4 @@ for i in range(1, 10000000):
     if not i % 100000:
         print(i)
 print(numOf89s)
-print(time.clock() - start)
+print(time.perf_counter() - start)

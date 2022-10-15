@@ -4,7 +4,7 @@ import math
 import itertools
 
 # inputFile = open('resources/', 'r')
-start = time.clock()
+start = time.perf_counter()
 limit = 50000000
 primes = (helpers.primes_to(int(limit ** .5) + 1))
 
@@ -26,4 +26,4 @@ for i in primes:
         else:
             break
 print(len(nums))
-print(time.clock() - start)
+print(time.perf_counter() - start)

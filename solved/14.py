@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 cache = {}
 k = 1
@@ -26,4 +26,4 @@ while k < 10 ** 6:
     k += 1
 print("\033[0;35mmc", mc, bn, "\033[0m")
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

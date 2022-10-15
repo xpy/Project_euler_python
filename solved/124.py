@@ -5,7 +5,7 @@ import helpers
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 prime_factors = {}
 
@@ -48,5 +48,5 @@ for i in sorted(flist2):
         result = i[1]
     k += 1
 print(result)
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)
 # 21417

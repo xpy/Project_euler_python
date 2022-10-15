@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 primesList = helpers.primes_to(1000)
 primeListLength = len(primesList)
@@ -37,4 +37,4 @@ else:
     print(k - numOfDistinct + 1)
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

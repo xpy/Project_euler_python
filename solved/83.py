@@ -117,7 +117,7 @@ class Head:
             next_move = self.get_next_move()
 
 
-start_time = time.clock()
+start_time = time.perf_counter()
 or_w = w
 or_h = h
 
@@ -156,4 +156,4 @@ for i in range(1, or_w - 1):
         except IndexError:
             pass
 print(the_cache_thing[w - 1][h - 1].tail_sum)
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

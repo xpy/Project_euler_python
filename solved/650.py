@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 global_primes = helpers.shieve_primes_to(20000)
 set_primes = set(global_primes)
@@ -71,4 +71,4 @@ for i in range(2, 20001):
 
 print("\033[0;35mts -------------- ", ts % MOD, "\033[0m")
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

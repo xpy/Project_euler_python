@@ -7,7 +7,7 @@ from decimal import *
 getcontext().prec = 7
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 
 def combs(n, r):
@@ -41,4 +41,4 @@ for i in results:
     summa += results[i]
 print('summa', format(summa, '.7f'))
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

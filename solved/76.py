@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 cache = {}
 
@@ -26,4 +26,4 @@ print(do_it(100, 99))
 # print(cache)
 # 190569291
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

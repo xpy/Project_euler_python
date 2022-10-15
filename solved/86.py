@@ -6,7 +6,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 num_of_nums = 0
 counter = 0
 things = []
@@ -56,4 +56,4 @@ while k < max_num:
 
 print("\033[0;35mnum_of_nums", num_of_nums, k, "\033[0m")
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

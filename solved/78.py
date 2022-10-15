@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 partitions = {0: 1, 1: 1}
 
@@ -77,14 +77,14 @@ while partition2(k) % limit != 0:
     if k % 1000 == 0:
         print(k, partition2(k))
         print(len(partitions))
-        print(time.clock() - start)
+        print(time.perf_counter() - start)
         if k % 100000 == 0:
             print("WE GOT 100000!!!", k, partition2(k))
 
     k += 1
 print(k, partition2(k))
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
 # asdf(top)
 # 24061467864032622473692149727991
 # 3000 496025142797537184410324879054927095334462742231683423624 66.

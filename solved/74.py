@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 cache = {}
 cache2 = {}
@@ -41,4 +41,4 @@ for i in range(1, 1000000):
         # print(buffer)
         k += 1
 print(k)
-print(time.clock() - start)
+print(time.perf_counter() - start)

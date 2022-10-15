@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 
 # print 0b100 & 0b110
@@ -45,4 +45,4 @@ for aprime in primes:
 
 # print([prime for prime in helpers.primesTo(1000000) if prime > 100000])
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

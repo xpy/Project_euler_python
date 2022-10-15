@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 primes = [i for i in helpers.primes_to(9999) if (i > 1000)]
 results = []
@@ -16,4 +16,4 @@ for index, prime in enumerate(primes):
 print(results)
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

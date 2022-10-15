@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 k = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 max_num = 1929394959697989990
@@ -48,4 +48,4 @@ for c in range(2, 8):
     nums = nums2
 # 1389019170
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

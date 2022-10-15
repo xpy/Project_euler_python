@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 combination_chances = {}
 p = list(itertools.product(range(1, 7), repeat=2))
 all_chances = 0
@@ -110,4 +110,4 @@ print(24, ' ', sq, " ", (sq * 100) / total, '%')
 sq = squares[0]
 print(0, ' ', sq, " ", (sq * 100) / total, '%')
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

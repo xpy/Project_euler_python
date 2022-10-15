@@ -4,11 +4,11 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 primes = [str(i) for i in helpers.shieve_primes_to(90000000)]
 primesSet = set(primes)
 print('PRIMES RRREADY!!!')
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 # len_primes = {}
 # for i in primes:
@@ -21,7 +21,7 @@ print(time.clock() - start)
 biggest_len = len(primes[-1])
 print('INDEXES RRREADY!!!')
 print(biggest_len)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 
 def check(sub_list, target_length):
@@ -56,4 +56,4 @@ def do_the_thing(pr1, pr2):
 # print(check(['673', '613', '529', '499', '457', '397', '199', '109', '7', '3'], 3))
 print(check(primes, 4))
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

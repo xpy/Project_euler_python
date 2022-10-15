@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 file = open('resources/keylog.txt', 'r')
 numbers = {}
@@ -60,4 +60,4 @@ while len(numbers2):
 print(str.join('', startResults[::-1]) + str.join('', endResults))
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

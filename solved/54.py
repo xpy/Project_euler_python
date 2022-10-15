@@ -4,7 +4,7 @@ import math
 
 inputFile = open('resources/p054_poker.txt', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 figures = {'A': 14, 'T': 10, 'J': 11, 'Q': 12, 'K': 13}
 
@@ -138,4 +138,4 @@ for line in inputFile.readlines():
     if handA > handB:
         handAWins += 1
 print(handAWins)
-print(time.clock() - start)
+print(time.perf_counter() - start)

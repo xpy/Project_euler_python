@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 pentagonals = {}
 k = 0
 min_value = 10000000
@@ -32,4 +32,4 @@ print('-' * 20)
 for i in results:
     print(i)
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

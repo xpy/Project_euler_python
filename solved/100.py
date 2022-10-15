@@ -7,7 +7,7 @@ getcontext().prec = 100
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 
 def find_solutions(num):
@@ -56,6 +56,6 @@ print(solve_diophantine(1, 1, 2, 0, -1, 2, 1, 0))
 #         print(i - res[0], i - res[1])
 #         # break
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 (707106783028 / 1000000002604) * (707106783027 / 1000000002603)

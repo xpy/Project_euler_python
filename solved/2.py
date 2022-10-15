@@ -2,7 +2,7 @@ import time
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 fib = [1, 2]
 evens = 0
@@ -12,4 +12,4 @@ while fib[1] < 4 * (10 ** 6):
     fib[0], fib[1] = fib[1], fib[0] + fib[1]
 s = evens
 print("\033[0;35m", s, "\033[0m")
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

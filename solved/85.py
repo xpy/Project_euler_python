@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 # (n + 1) * n / 2
 
 num1 = 54
@@ -26,4 +26,4 @@ for i in range(0, 1414):
 
 print(num1 * num2)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

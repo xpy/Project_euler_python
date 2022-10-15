@@ -4,10 +4,10 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 target = 1000000
 # primes = helpers.primesTo(target)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 targetNum = 3 / 7
 best_diff = 1
@@ -29,4 +29,4 @@ for i in reversed(range(1, target + 1)):
 
 print(best_tuple)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

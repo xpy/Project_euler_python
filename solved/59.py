@@ -2,7 +2,7 @@ import time
 import helpers
 from itertools import product
 
-start = time.clock()
+start = time.perf_counter()
 
 f = open('resources\cipher1.txt', 'r')
 letters = f.read().split(',')
@@ -30,4 +30,4 @@ for p in passwords:
         print(sum(map(ord, decyphered)), end=' ')
         print(decyphered)
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

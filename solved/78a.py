@@ -3,7 +3,7 @@ import helpers
 import math
 
 # inputFile = open('resources/', 'r')
-start = time.clock()
+start = time.perf_counter()
 
 p = [1]
 
@@ -28,4 +28,4 @@ while True:
         break
     n += 1
 print(p)
-print(time.clock() - start)
+print(time.perf_counter() - start)

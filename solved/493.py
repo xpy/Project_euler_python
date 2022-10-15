@@ -6,7 +6,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 things = [10 for i in range(0, 7)]
 
@@ -20,4 +20,4 @@ res = (all_combs - (n_out_of_n(60, 20))) / all_combs
 
 print("\033[0;35mres", res * 7, "\033[0m")
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

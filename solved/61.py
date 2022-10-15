@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 
 def root(a, b, c):
@@ -52,4 +52,4 @@ for i in [list(i) for i in
         break
 
 print(sum([i[0] for i in res]))
-print(time.clock() - start)
+print(time.perf_counter() - start)

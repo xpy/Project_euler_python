@@ -5,7 +5,7 @@ import math
 # inputFile = open('resources/', 'r')
 
 
-start_time = time.clock()
+start_time = time.perf_counter()
 results = set()
 i = 10
 maxa = 0
@@ -41,4 +41,4 @@ print(sorted(results))
 
 print("----", len(results))
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 bouncy_sum = 0
 i = 1
@@ -19,4 +19,4 @@ while bouncy_sum / i != .99:
 
 print(i)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

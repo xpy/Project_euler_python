@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 cubic_dict = dict()
 last_key = 0
@@ -75,4 +75,4 @@ print(do_it(5))
 #         print(n)
 #         break
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 max_val = 1000
 counter = 0
 things = []
@@ -33,7 +33,7 @@ for thing in other_things:
             print("\033[0;35masd", hyp * new_thing[0] * new_thing[1], "\033[0m")
         new_things.add(new_thing)
         new_thing = (new_thing[0] + thing[0], new_thing[1] + thing[1])
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)
 
 print("\033[0;35mmax_thing", max_thing, "\033[0m")
 print("\033[0;35mnew_things", new_things, "\033[0m")

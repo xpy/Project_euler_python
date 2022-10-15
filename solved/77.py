@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 primes = list(reversed(helpers.shieve_primes_to(10000)))
 l = len(primes)
@@ -28,4 +28,4 @@ for i in [i for i in range(2, 1000)]:
         print(i, res)
         break
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

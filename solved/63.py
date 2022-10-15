@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 power = 1
 index = 1
@@ -19,4 +19,4 @@ while len(str(num)) == power:
 
 print(len(nums))
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

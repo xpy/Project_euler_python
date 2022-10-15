@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 grid_size = 20
-start_time = time.clock()
+start_time = time.perf_counter()
 nums = [
     8, 2, 22, 97, 38, 15, 00, 40, 00, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8,
     49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 00,
@@ -49,4 +49,4 @@ for i in range(0, grid_size * grid_size - num_size):
     max_num = max(max_num, hor, ver, diag_r, diag_l)
 
 print("\033[0;35mmax_num", max_num, "\033[0m")
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

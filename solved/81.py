@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 matrixFile = open('resources/matrix.txt', 'r')
 matrix = []
 routeSum = 1000000
@@ -63,4 +63,4 @@ print(routeSum)
 # print sum(route)
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

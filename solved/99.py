@@ -2,7 +2,7 @@ import time
 import helpers
 import math
 
-start = time.clock()
+start = time.perf_counter()
 
 print(max([(nums[1] * math.log10(nums[0]), i + 1) for i, nums in
            enumerate([list(map(int, line.split(','))) for line in open('resources/base_exp.txt').readlines()])]))
@@ -19,4 +19,4 @@ for nums in [map(int,line.split(',')) for line in  base_exp.readlines()]:
 print maxNum
 print maxIndex'''
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

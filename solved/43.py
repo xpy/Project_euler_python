@@ -3,7 +3,7 @@ from itertools import permutations
 
 __author__ = 'xPy'
 
-start = time.clock()
+start = time.perf_counter()
 
 max_value = 9
 divisors = [2, 3, 5, 7, 11, 13, 17]
@@ -24,4 +24,4 @@ results = [i for i in permutations(range(0, max_value + 1), max_value + 1) if (i
 print(sum(map(lambda x: int(''.join(map(str, x))), results)))
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

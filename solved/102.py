@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 f = open('resources/triangles.txt')
 
@@ -33,4 +33,4 @@ for i in f.readlines():
     print('---------------------', is_in)
 
 print(num_of_triangles)
-print(time.clock() - start)
+print(time.perf_counter() - start)

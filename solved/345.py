@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 nums = [
     [7, 53, 183, 439, 863, 497, 383, 563, 79, 973, 287, 63, 343, 169, 583],
     [627, 343, 773, 959, 943, 767, 473, 103, 699, 303, 957, 703, 583, 639, 913],
@@ -79,4 +79,4 @@ def the_other_way(i, s, js):
 
 the_other_way(0, 0, [])
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

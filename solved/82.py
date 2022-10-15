@@ -6,7 +6,7 @@ inputFile = open('resources/p082_matrix.txt', 'r')
 
 mmap = [[int(n) for n in l.split(',')] for l in inputFile]
 
-start = time.clock()
+start = time.perf_counter()
 
 w = 80
 h = 80
@@ -25,4 +25,4 @@ for i in range(0, h):
     minimum = min(minimum, new_map[i][h])
 
 print('---', minimum)
-print(time.clock() - start)
+print(time.perf_counter() - start)

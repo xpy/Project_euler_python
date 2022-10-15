@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 target = 10000000
 ordered_primes = helpers.shieve_primes_to(target)
@@ -48,4 +48,4 @@ for i in range(1, target):
 # totients = totient(number)
 # print(totients)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

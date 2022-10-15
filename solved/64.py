@@ -2,7 +2,7 @@ import time
 import helpers
 import math
 
-start = time.clock()
+start = time.perf_counter()
 
 num_of_sequences = 0
 
@@ -41,4 +41,4 @@ for i in range(2, 10000):
         fraction_to(i, 20000)
 
 print(num_of_sequences)
-print(time.clock() - start)
+print(time.perf_counter() - start)

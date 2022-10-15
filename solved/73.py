@@ -4,10 +4,10 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 target = 12000
 # primes = helpers.primesTo(target)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 target_start_num = 1 / 3
 target_end_num = 1 / 2
@@ -19,6 +19,6 @@ for i in range(2, target + 1):
 
 print(between)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 # 7295372

@@ -6,7 +6,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 max_num = int((10 ** 9) / 3)
 # max_num = 1000
@@ -46,4 +46,4 @@ for i in range(2, max_num):
     #     if sqj == sqii:
     #         print("\033[0;35mc", sqi + sqj, "\033[0m")
 print("\033[0;35ms", s, "\033[0m")
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

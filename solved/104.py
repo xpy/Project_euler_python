@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 
 def fibonachi_to(num):
@@ -41,4 +41,4 @@ for i in range(2, to):
     pre_tail, tail = tail, new_tail
     fibs = [fibs[1], next_fib]
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

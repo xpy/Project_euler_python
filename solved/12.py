@@ -3,7 +3,7 @@ import helpers
 import math
 
 # inputFile = open('resources/', 'r')
-start = time.clock()
+start = time.perf_counter()
 
 primes = helpers.shieve_primes_to(100000)
 primes_set = set(primes)
@@ -38,4 +38,4 @@ while True:
         print(num)
         break
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 starts = {}
 num = ''
@@ -71,4 +71,4 @@ print(int(lastDigits) * 28433 + 1 % mask)
 print('+' * 20)
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

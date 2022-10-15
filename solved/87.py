@@ -4,7 +4,7 @@ import math
 import itertools
 
 # inputFile = open('resources/', 'r')
-start = time.clock()
+start = time.perf_counter()
 limit = 50000000
 primes = (helpers.primes_to(int(limit ** .5)))
 limits = {2: limit ** (1 / 2), 3: limit ** (1 / 3), 4: limit ** (1 / 4)}
@@ -32,4 +32,4 @@ for i in itertools.combinations_with_replacement(primes, 3):
 print(nums)
 print(len(nums))
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

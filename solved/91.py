@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 n = 50
 
@@ -24,4 +24,4 @@ for i in range(1, n + 1):
 
 print(c)
 print(a + len(results))
-print(time.clock() - start)
+print(time.perf_counter() - start)

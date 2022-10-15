@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 coins = list(reversed([1, 2, 5, 10, 20, 50, 100, 200]))
 maximum = 20
@@ -23,4 +23,4 @@ def makeSum(summa,  index):
 
 print(makeSum(0, 0))
 
-print(time.clock() - start)
+print(time.perf_counter() - start)

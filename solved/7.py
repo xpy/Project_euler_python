@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 print(helpers.shieve_primes_to(1000000)[10000])
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

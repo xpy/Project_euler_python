@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 hasdasdfs = set()
 not_hasss = set()
@@ -39,4 +39,4 @@ for k in range(0, 12):
                     # print("\033[0;35mi", hi, "\033[0m")
 
 print("\033[0;35msum(results)", sum(results), "\033[0m")
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

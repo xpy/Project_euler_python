@@ -4,8 +4,8 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 # CODE GOES HERE SILLY!!
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

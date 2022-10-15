@@ -6,7 +6,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 letter_to_num = {
     "I": 1,
@@ -62,4 +62,4 @@ for l in f.readlines():
     new_letters += optimal
 
 print(letters, new_letters, letters - new_letters)
-print(time.clock() - start)
+print(time.perf_counter() - start)

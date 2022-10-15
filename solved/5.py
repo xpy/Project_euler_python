@@ -2,7 +2,7 @@ import time
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 nums = [11, 12, 13, 14, 15, 16, 17, 18, 19][::-1]
 
@@ -17,4 +17,4 @@ while True:
         break
     i += 1
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

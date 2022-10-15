@@ -5,7 +5,7 @@ import itertools
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 sums_map = {}
 valid_sets = []
 
@@ -53,6 +53,6 @@ for vss in valid_sets:
 
 for amazing_set in the_amazing_sets:
     print(amazing_set)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 6357528249411013
 6531031914842725

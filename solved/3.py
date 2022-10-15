@@ -21,7 +21,7 @@ def get_prime_factors(num, primes=()):
     return pf
 
 
-start_time = time.clock()
+start_time = time.perf_counter()
 prime_factors = {}
 num = 600851475143
 primes = (helpers.shieve_primes_to(int(num**.5)))
@@ -31,4 +31,4 @@ set_primes = set(primes)
 pf = get_prime_factors(num, primes)
 print("\033[0;35mpf", pf, "\033[0m")
 
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

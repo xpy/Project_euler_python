@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 
 
 def phi3(num):
@@ -62,4 +62,4 @@ for i in range(2, 10000):
 
 print(maxPhi, maxNi)
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

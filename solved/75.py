@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 # print(fraction(23))
 num = 1
@@ -34,7 +34,7 @@ for i in existing:
         counter += 1
         # print(i, existing[i])
 print(counter)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 # 355570
 # 161667

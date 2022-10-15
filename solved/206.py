@@ -5,7 +5,7 @@ from itertools import product
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 a = '1234567890'
 
@@ -27,6 +27,6 @@ def check_num(prea):
 
 check_num('0')
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
 # 1929374254627488900 1389019170
 # 1929374254627488900

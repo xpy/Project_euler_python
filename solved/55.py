@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 lychrels = []
 
 for num in range(10000):
@@ -19,4 +19,4 @@ for num in range(10000):
 
 print(len(lychrels))
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

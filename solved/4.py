@@ -2,7 +2,7 @@ import time
 
 # inputFile = open('resources/', 'r')
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 maxpal = 0
 for i in range(100, 1000):
@@ -13,4 +13,4 @@ for i in range(100, 1000):
             maxpal = max(num, maxpal)
 
 print("\033[0;35mpals", maxpal, "\033[0m")
-print(time.clock() - start_time)
+print(time.perf_counter() - start_time)

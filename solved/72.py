@@ -4,10 +4,10 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 target = 1000000
 # primes = helpers.primesTo(target)
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 total = 0
 ordered_primes = helpers.shieve_primes_to(target)
@@ -39,6 +39,6 @@ for i in range(2, target + 1):
 
 print('??', total)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
 
 # 7295372

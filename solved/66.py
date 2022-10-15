@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 # print(fraction(23))
 num = 5
@@ -25,4 +25,4 @@ for i in [i for i in range(2, 1000) if not (i ** .5).is_integer()]:
     print(i, ms)
 
 print('max_n', max_n)
-print(time.clock() - start)
+print(time.perf_counter() - start)

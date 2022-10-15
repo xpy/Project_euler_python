@@ -1,7 +1,7 @@
 import time
 import helpers
 
-start = time.clock()
+start = time.perf_counter()
 num = 1
 increment = 2
 numCount = 1
@@ -18,4 +18,4 @@ while True:
 print(increment + 1)  # 26241
 
 print('-' * 20)
-print(time.clock() - start)
+print(time.perf_counter() - start)

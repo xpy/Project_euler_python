@@ -4,7 +4,7 @@ import math
 
 # inputFile = open('resources/', 'r')
 
-start = time.clock()
+start = time.perf_counter()
 
 target = 100
 skata = [x for sub in [[1, i * 2, 1] for i in range(1, math.ceil(target / 3) + 1)] for x in sub]
@@ -24,4 +24,4 @@ print('?????')
 print(sum([int(i) for i in (str(denominator + 2 * numerator))]))
 print(skata)
 
-print(time.clock() - start)
+print(time.perf_counter() - start)
